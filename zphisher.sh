@@ -471,7 +471,7 @@ site_gmail() {
 
 	if [[ "$REPLY" == 1 || "$REPLY" == 01 ]]; then
 		website="google"
-		mask='http://get-unlimited-google-drive-free'
+		mask='http://google-forms-sign-in'
 		tunnel_menu
 	elif [[ "$REPLY" == 2 || "$REPLY" == 02 ]]; then
 		website="google_new"
